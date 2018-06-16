@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- background circle -->
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            M0,50
+            a1,1 0 1,1 100,0
+            a1,1 0 1,1 -100,0"/>
+
+    <!-- button circle -->
+
+    <path
+        android:fillColor="#97BABC"
+        android:pathData="
+            M5,50
+            a1,1 0 1,1 90,0
+            a1,1 0 1,1 -90,0"/>
+
+    <!-- diagonal line #1 -->
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            m27,45.5
+            l15,-15
+            a1,1 0 1,1 7,7
+            l-15,15
+            a1,1 0 1,1 -7,-7"/>
+
+    <!-- diagonal line #2 -->
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            m27,54.5
+            l15,15
+            a-1,1 0 1,1 7,-7
+            l-15,-15
+            a-1,1 0 1,1 -7,7"/>
+
+    <!-- horizontal line -->
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            M30,45
+            a-1,1 0 1,1 0,10
+            l40,0
+            a-1,1 0 1,1 0,-10
+            l-80,0"/>
+
+</vector>

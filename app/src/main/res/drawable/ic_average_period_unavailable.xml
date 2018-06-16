@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+
+    <!-- outer circle -->
+    <path
+        android:strokeColor="#666666"
+        android:fillColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:pathData="
+            M12,36
+            a1,1 0 1,1 39,10
+            a1,1 0 1,1 -39,-10"/>
+
+    <!-- inner circle -->
+    <path
+        android:strokeColor="#666666"
+        android:strokeWidth="1"
+        android:pathData="
+            M16,36
+            a1,1 0 1,1 31,10
+            a1,1 0 1,1 -31,-10"/>
+
+        <!-- outer arch -->
+    <path
+        android:strokeColor="#666666"
+        android:strokeWidth="1.8"
+        android:pathData="
+            M20,25
+            l0,-10
+            a1,1 0 1,1 23,1
+            l0,9"/>
+
+        <!-- inner arch -->
+    <path
+        android:strokeColor="#666666"
+        android:strokeWidth="1"
+        android:pathData="
+            M23,22
+            l0,-6
+            a1,1 0 1,1 17,0
+            l0,6"/>
+
+    <!-- left eye -->
+    <path
+        android:fillColor="#666666"
+        android:pathData="
+            M22,35
+            a1,1 0 1,1 3,0
+            a1,1 0 1,1 -3,0"/>
+
+    <!-- right eye -->
+    <path
+        android:fillColor="#666666"
+        android:pathData="
+            M41,35
+            a1,1 0 1,1 -3,0
+            a1,1 0 1,1 3,0"/>
+
+        <!-- mouth -->
+    <path
+        android:strokeColor="#666666"
+        android:strokeWidth="1"
+        android:pathData="
+            M40,45
+            a4,2 0 1,1 -18,0 "/>
+
+</vector>

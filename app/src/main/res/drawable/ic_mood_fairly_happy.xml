@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="64dp"
+    android:viewportWidth="32"
+    android:viewportHeight="64">
+
+    <!-- circle -->
+    <path
+        android:fillColor="#FF7F27"
+        android:strokeColor="#666666"
+        android:strokeWidth="1.5"
+        android:pathData="
+            M2,32
+            a1,1 0 1,1 60,0
+            a1,1 0 1,1 -60,0"/>
+
+    <!-- eye -->
+    <path
+        android:fillColor="#666666"
+        android:pathData="
+            M17,23
+            a1,1 0 1,1 5,0
+            a1,1 0 1,1 -5,0"/>
+
+    <!-- mouth -->
+    <path
+        android:strokeColor="#666666"
+        android:strokeWidth="1.5"
+        android:pathData="
+            M47,37
+            a2,1 0 1,1 -30,0"/>
+
+</vector>

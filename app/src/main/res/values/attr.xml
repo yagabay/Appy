@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="com.vismus.appy.PointingTextView">
+        <attr name="view_height" format="integer"/>
+        <attr name="text" format="string"/>
+        <attr name="text_size" format="integer"/>
+        <attr name="text_color" format="color"/>
+        <attr name="triangle_width" format="integer"/>
+        <attr name="text_indent" format="integer"/>
+        <attr name="is_available" format="boolean"/>
+        <attr name="view_direction" format="enum">
+            <enum name="ltr" value="0"/>
+            <enum name="rtl" value="1"/>
+        </attr>
+        <attr name="view_color" format="enum">
+            <enum name="BLUE" value="0"/>
+            <enum name="GRAY" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>
