@@ -173,18 +173,23 @@ public class AverageListAdapter extends BaseAdapter {
     }
 
     void showMessageAverageInfoUnavailable(AveragePeriod averagePeriod) {
-        String message = "לא הצבעת ";
+        String message;
         if (averagePeriod == AveragePeriod.TODAY) {
-            message += "היום";
+            message = _context.getResources().getString(R.string.no_vote_today);
         } else if (averagePeriod == AveragePeriod.ALL) {
-            message += "מעולם";
+            message = _context.getResources().getString(R.string.no_vote_ever);
         } else {
             String periodTitle = averagePeriod.title();
+            String messageFmt;
             if (Character.isDigit(periodTitle.charAt(0))) {
-                message += "ב-" + periodTitle;
+                messageFmt = _context.getResources().getString(R.string.no_vote_in_period_v1);
             } else {
-                message += "ב" + (periodTitle.charAt(0) == 'ה' ? periodTitle.substring(1, periodTitle.length()) : periodTitle);
+                if(periodTitle.charAt(0) == 'ה'){
+                    periodTitle = periodTitle.substring(1, periodTitle.length());
+                }
+                messageFmt = _context.getResources().getString(R.string.no_vote_in_period_v2);
             }
+            message = String.format(messageFmt, periodTitle);
         }
         Toast.makeText(_context, message, Toast.LENGTH_SHORT).show();
     }

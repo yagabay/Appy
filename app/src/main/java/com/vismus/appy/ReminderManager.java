@@ -26,8 +26,8 @@ public class ReminderManager {
     static final String NOISY_NOTIFICATION_CHANNEL_ID = "CHANNEL_NOISY";
     static final String SILENT_NOTIFICATION_CHANNEL_ID = "CHANNEL_SILENT";
 
-    static final int DEFAULT_MIN_REMINDER_HOUR = 0;
-    static final int DEFAULT_MAX_REMINDER_HOUR = 24;
+    static final int DEFAULT_MIN_REMINDER_HOUR = 10;
+    static final int DEFAULT_MAX_REMINDER_HOUR = 20;
 
     Context _context;
     PreferenceData _prefData;
@@ -56,7 +56,9 @@ public class ReminderManager {
     }
 
     public void publishReminder(Date nowDate) {
-        publishReminder(nowDate, "Appy", "איך אתה מרגיש היום?");
+        String appName = _context.getResources().getString(R.string.app_name);
+        String voteQuestion = _context.getResources().getString(R.string.vote_question);
+        publishReminder(nowDate, appName, voteQuestion);
     }
 
     public Date setReminder(Date nowDate) {

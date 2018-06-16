@@ -15,7 +15,7 @@
         android:layout_margin="5dp">
 
         <TextView
-            android:text="איך אתה מרגיש, תומר?"
+            android:text="@string/vote_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"

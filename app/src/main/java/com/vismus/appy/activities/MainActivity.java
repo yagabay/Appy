@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements SplashFragmentLis
     }
 
     @Override
-    public void onAppDataDeleted() {
+    public void onAppDataReset() {
         _mainPagerFragment.refreshAveragesFragment();
     }
 

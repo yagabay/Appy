@@ -23,24 +23,22 @@
             android:scaleY="0.5"/>
 
         <TextView
-            android:id="@+id/txv_message_line_1"
-            android:text="ברוך הבא ל-Appy!"
+            android:id="@+id/txv_welcome_to_appy"
+            android:text="@string/welcome_to_appy"
             android:textSize="25dp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/txv_message_line_2"
-            android:text="כדי שלא תשכח להצביע -"
+            android:text="@string/reminders_recommend_p1"
             android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"/>
 
         <TextView
-            android:id="@+id/txv_message_line_3"
-            android:text="כדאי לאפשר תזכורת יומית"
+            android:text="@string/reminders_recommend_p2"
             android:textSize="20dp"
             android:textColor="#666666"
             android:layout_width="wrap_content"
@@ -48,8 +46,7 @@
             android:layout_marginTop="10dp"/>
 
         <TextView
-            android:id="@+id/txv_message_line_4"
-            android:text="התזכורת תופיע בכל יום"
+            android:text="@string/reminders_time_p1"
             android:textSize="15dp"
             android:textColor="#666666"
             android:layout_width="wrap_content"
@@ -57,8 +54,7 @@
             android:layout_marginTop="20dp"/>
 
         <TextView
-            android:id="@+id/txv_message_line_5"
-            android:text="בשעה אקראית בין 10:00 ל-20:00."
+            android:text="@string/reminders_time_p2"
             android:textSize="15dp"
             android:textColor="#666666"
             android:layout_width="wrap_content"
@@ -66,8 +62,7 @@
             android:layout_marginTop="5dp"/>
 
         <TextView
-            android:id="@+id/txv_message_line_6"
-            android:text="ניתן לערוך את טווח השעות"
+            android:text="@string/reminders_time_edit_p1"
             android:textSize="15dp"
             android:textColor="#666666"
             android:layout_width="wrap_content"
@@ -75,8 +70,7 @@
             android:layout_marginTop="5dp"/>
 
         <TextView
-            android:id="@+id/txv_message_line_7"
-            android:text="בתפריט 'אפשרויות' באפליקציה"
+            android:text="@string/reminders_time_edit_p2"
             android:textSize="15dp"
             android:textColor="#666666"
             android:layout_width="wrap_content"
@@ -91,7 +85,7 @@
 
             <Button
                 android:id="@+id/btn_enable_reminders"
-                android:text="אפשר תזכורת יומית"
+                android:text="@string/enable_reminders"
                 android:textColor="@color/white"
                 android:backgroundTint="#FF6295"
                 android:layout_width="wrap_content"
@@ -99,8 +93,8 @@
                 android:layout_marginTop="30dp"/>
 
             <Button
-                android:id="@+id/btn_dont_enable_reminders"
-                android:text="לא כרגע"
+                android:id="@+id/btn_not_now"
+                android:text="@string/not_now"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"/>

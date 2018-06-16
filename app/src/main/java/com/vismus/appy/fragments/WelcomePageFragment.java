@@ -18,7 +18,7 @@ public class WelcomePageFragment extends Fragment {
 
     // views
     Button _btnEnableReminders;
-    Button _btnDontEnableReminders;
+    Button _btnNotNow;
 
     WelcomePageFragmentListener _fragmentListener; // listener: MainActivity
     ReminderManager _reminderManager;
@@ -29,11 +29,11 @@ public class WelcomePageFragment extends Fragment {
 
         // find views
         _btnEnableReminders = rootView.findViewById(R.id.btn_enable_reminders);
-        _btnDontEnableReminders = rootView.findViewById(R.id.btn_dont_enable_reminders);
+        _btnNotNow = rootView.findViewById(R.id.btn_not_now);
 
         // set listeners
         _btnEnableReminders.setOnClickListener(new OnEnableRemindersButtonClicked());
-        _btnDontEnableReminders.setOnClickListener(new OnDontEnableRemindersButtonClicked());
+        _btnNotNow.setOnClickListener(new OnNotNowButtonClicked());
 
         _reminderManager = ReminderManager.getInstance(getContext());
         return rootView;
@@ -61,7 +61,7 @@ public class WelcomePageFragment extends Fragment {
         }
     }
 
-    class OnDontEnableRemindersButtonClicked implements View.OnClickListener {
+    class OnNotNowButtonClicked implements View.OnClickListener {
         @Override
         public void onClick(View view) {
             closeWelcomePage();

@@ -7,7 +7,7 @@
     android:clickable="true"
     android:background="@drawable/bg_main_pager">
 
-    <!-- options title -->
+    <!-- header -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             android:layout_marginRight="20dp"/>
 
         <TextView
-            android:text="אפשרויות"
+            android:text="@string/options"
             android:textSize="22dp"
             android:textColor="#FFFFFF"
             android:layout_width="wrap_content"
@@ -54,29 +54,29 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/txv_reminders_section_title"
-                    android:text="תזכורות"
+                    android:id="@+id/txv_title_reminders"
+                    android:text="@string/title_reminders"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <CheckBox
-                    android:id="@+id/chk_enable_reminders"
-                    android:text="תזכורת יומית"
+                    android:id="@+id/chk_daily_reminder"
+                    android:text="@string/daily_reminder"
                     android:textSize="18dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txv_reminders_section_title"/>
+                    android:layout_below="@id/txv_title_reminders"/>
 
                  <RelativeLayout
-                     android:id="@+id/lay_reminder_time_range"
+                     android:id="@+id/lay_reminder_hours_range"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:layout_below="@id/chk_enable_reminders"
-                     android:layout_alignStart="@id/chk_enable_reminders">
+                     android:layout_below="@id/chk_daily_reminder"
+                     android:layout_alignStart="@id/chk_daily_reminder">
 
                      <TextView
-                         android:id="@+id/txv_reminder_time_range_part1"
-                         android:text="בשעה אקראית בין"
+                         android:id="@+id/txv_random_hour_from"
+                         android:text="@string/random_hour_from"
                          android:textSize="17dp"
                          android:textColor="#000000"
                          android:layout_width="wrap_content"
@@ -87,13 +87,13 @@
                          android:id="@+id/spn_min_reminder_hour"
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:entries="@array/arr_hours_of_day"
+                         android:entries="@array/arr_day_hours"
                          android:background="@drawable/ic_spinner"
-                         android:layout_toLeftOf="@id/txv_reminder_time_range_part1"/>
+                         android:layout_toLeftOf="@id/txv_random_hour_from"/>
                      
                      <TextView
-                         android:id="@+id/txv_reminder_time_range_part2"
-                         android:text="ל-"
+                         android:id="@+id/txv_to"
+                         android:text="@string/to"
                          android:textSize="17dp"
                          android:textColor="#000000"
                          android:layout_width="wrap_content"
@@ -105,19 +105,19 @@
                          android:id="@+id/spn_max_reminder_hour"
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:entries="@array/arr_hours_of_day"
+                         android:entries="@array/arr_day_hours"
                          android:background="@drawable/ic_spinner"
-                         android:layout_toLeftOf="@id/txv_reminder_time_range_part2"/>
+                         android:layout_toLeftOf="@id/txv_to"/>
 
                  </RelativeLayout>
 
                  <CheckBox
-                    android:id="@+id/chk_enable_reminder_sound"
-                    android:text="צליל בזמן תזכורת"
+                    android:id="@+id/chk_reminder_sound"
+                    android:text="@string/sound_on_reminder"
                     android:textSize="18dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/lay_reminder_time_range"
+                    android:layout_below="@id/lay_reminder_hours_range"
                     android:layout_marginLeft="10dp"/>
 
             </RelativeLayout>
@@ -125,19 +125,19 @@
             <!-- export data -->
 
             <RelativeLayout
-                android:id="@+id/lay_export_data_section"
+                android:id="@+id/lay_data_export"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/lay_reminders"
                 android:layout_marginTop="10dp">
 
                 <TextView
-                    android:text="גיבוי"
+                    android:text="@string/title_data_export"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <LinearLayout
-                    android:id="@+id/lay_export_email_address"
+                    android:id="@+id/lay_export_data_to_email"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
                     android:layout_marginLeft="10dp">
 
                     <TextView
-                        android:text="שלח את המידע שבאפליקציה לאי-מייל"
+                        android:text="@string/export_data_to_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
@@ -154,32 +154,32 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/btn_send_app_data"
-                    android:text="שלח"
+                    android:id="@+id/btn_export_data"
+                    android:text="@string/export"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/lay_export_email_address"
+                    android:layout_below="@id/lay_export_data_to_email"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="10dp"/>
 
             </RelativeLayout>
 
-            <!-- delete data -->
+            <!-- reset data -->
 
             <RelativeLayout
-                android:id="@+id/lay_delete_data_section"
+                android:id="@+id/lay_data_reset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/lay_export_data_section"
+                android:layout_below="@id/lay_data_export"
                 android:layout_marginTop="18dp">
 
                 <TextView
-                    android:text="איפוס"
+                    android:text="@string/title_data_reset"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <LinearLayout
-                    android:id="@+id/lay_delete_data"
+                    android:id="@+id/lay_reset_data"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -187,7 +187,7 @@
                     android:layout_marginLeft="10dp">
 
                     <TextView
-                        android:text="אפס את המידע שבאפליקציה"
+                        android:text="@string/reset_data"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
@@ -196,13 +196,13 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/btn_delete_app_data"
-                    android:text="אפס"
+                    android:id="@+id/btn_reset_data"
+                    android:text="@string/reset"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#FFFFFF"
                     android:backgroundTint="#FF0000"
-                    android:layout_below="@id/lay_delete_data"
+                    android:layout_below="@id/lay_reset_data"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="10dp"/>
 
@@ -211,6 +211,8 @@
         </RelativeLayout>
 
     </LinearLayout>
+
+    <!-- back button -->
 
     <RelativeLayout
         android:layout_width="match_parent"

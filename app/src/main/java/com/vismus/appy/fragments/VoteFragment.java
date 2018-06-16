@@ -61,7 +61,7 @@ public class VoteFragment extends Fragment {
                 _fragmentListener.onMoodItemClicked();
             }
             else{
-                showDialogConfirmSelectionChange(mood, nowDate);
+                showDialogConfirmReselection(mood, nowDate);
             }
         }
     }
@@ -79,17 +79,17 @@ public class VoteFragment extends Fragment {
 
     /* HELPERS */
 
-    void showDialogConfirmSelectionChange(final Mood mood, final Date nowDate) {
+    void showDialogConfirmReselection(final Mood mood, final Date nowDate) {
         AlertDialog.Builder dlgAlertBuilder = new AlertDialog.Builder(_context);
-        dlgAlertBuilder.setMessage("כבר הצבעת היום. האם תרצה לשנות את הבחירה שלך?");
-        dlgAlertBuilder.setPositiveButton("כן", new DialogInterface.OnClickListener() {
+        dlgAlertBuilder.setMessage(getResources().getString(R.string.confirm_vote_reselect));
+        dlgAlertBuilder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Utils.addMoodVote(_context, mood, nowDate, true);
                 _fragmentListener.onMoodItemClicked();
             }
         });
-        dlgAlertBuilder.setNegativeButton("לא", new DialogInterface.OnClickListener() {
+        dlgAlertBuilder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {}
         });

@@ -39,7 +39,7 @@ public class OptionsFragment extends Fragment {
     CheckBox _chkEnableNotificationsSound;
     Spinner _spnMinNotificationHour;
     Spinner _spnMaxNotificationHour;
-    Button _btnSendAppData;
+    Button _btnExportData;
     Button _btnDeleteAppData;
     ImageButton _btnBack;
 
@@ -144,26 +144,26 @@ public class OptionsFragment extends Fragment {
         public void onNothingSelected(AdapterView<?> parentView) {}
     }
 
-    class OnSendAppDataButtonClickListener implements View.OnClickListener {
+    class OnExportDataButtonClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
             if(MoodVotesDatabase.getInstance(getContext()).moodVoteDao().getAll().size() != 0){
-                sendAppData();
+                exportData();
             }
             else {
-                showDialogNoAppData();
+                showDialogNoData();
             }
         }
     }
 
-    class OnDeleteAppDataButtonClickListener implements View.OnClickListener {
+    class OnResetDataButtonClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
             if(MoodVotesDatabase.getInstance(getContext()).moodVoteDao().getAll().size() != 0){
-                showDialogConfirmAppDataDeletion();
+                showDialogConfirmDataReset();
             }
             else {
-                showDialogNoAppData();
+                showDialogNoData();
             }
         }
     }
@@ -178,12 +178,12 @@ public class OptionsFragment extends Fragment {
     /* HELPERS */
 
     void findViews(ViewGroup rootView){
-        _chkEnableNotifications = rootView.findViewById(R.id.chk_enable_reminders);
-        _chkEnableNotificationsSound = rootView.findViewById(R.id.chk_enable_reminder_sound);
+        _chkEnableNotifications = rootView.findViewById(R.id.chk_daily_reminder);
+        _chkEnableNotificationsSound = rootView.findViewById(R.id.chk_reminder_sound);
         _spnMinNotificationHour = rootView.findViewById(R.id.spn_min_reminder_hour);
         _spnMaxNotificationHour = rootView.findViewById(R.id.spn_max_reminder_hour);
-        _btnSendAppData = rootView.findViewById(R.id.btn_send_app_data);
-        _btnDeleteAppData = rootView.findViewById(R.id.btn_delete_app_data);
+        _btnExportData = rootView.findViewById(R.id.btn_export_data);
+        _btnDeleteAppData = rootView.findViewById(R.id.btn_reset_data);
         _btnBack = rootView.findViewById(R.id.btn_back);
     }
 
@@ -195,12 +195,12 @@ public class OptionsFragment extends Fragment {
         _chkEnableNotificationsSound.setEnabled(isNotificationsEnabled);
 
         // spinners
-        SpinnerAdapter adpMinNotificationsHour = new SpinnerAdapter(getContext(), R.layout.spinner_item, getResources().getStringArray(R.array.arr_hours_of_day));
+        SpinnerAdapter adpMinNotificationsHour = new SpinnerAdapter(getContext(), R.layout.spinner_item, getResources().getStringArray(R.array.arr_day_hours));
         adpMinNotificationsHour.setItemEnabled(24, false);
         _spnMinNotificationHour.setAdapter(adpMinNotificationsHour);
         _spnMinNotificationHour.setSelection(_prefData.getMinReminderHour());
         _spnMinNotificationHour.setEnabled(isNotificationsEnabled);
-        SpinnerAdapter adpMaxNotificationsHour = new SpinnerAdapter(getContext(), R.layout.spinner_item, getResources().getStringArray(R.array.arr_hours_of_day));
+        SpinnerAdapter adpMaxNotificationsHour = new SpinnerAdapter(getContext(), R.layout.spinner_item, getResources().getStringArray(R.array.arr_day_hours));
         adpMaxNotificationsHour.setItemEnabled(0, false);
         _spnMaxNotificationHour.setAdapter(adpMaxNotificationsHour);
         _spnMaxNotificationHour.setSelection(_prefData.getMaxReminderHour());
@@ -212,12 +212,12 @@ public class OptionsFragment extends Fragment {
         _chkEnableNotificationsSound.setOnCheckedChangeListener(new OnEnableNotificationSoundCheckBoxChangedListener());
         _spnMinNotificationHour.setOnItemSelectedListener(new OnMinNotificationHourSpinnerItemSelectedListener());
         _spnMaxNotificationHour.setOnItemSelectedListener(new OnMaxNotificationHourSpinnerItemSelectedListener());
-        _btnSendAppData.setOnClickListener(new OnSendAppDataButtonClickListener());
-        _btnDeleteAppData.setOnClickListener(new OnDeleteAppDataButtonClickListener());
+        _btnExportData.setOnClickListener(new OnExportDataButtonClickListener());
+        _btnDeleteAppData.setOnClickListener(new OnResetDataButtonClickListener());
         _btnBack.setOnClickListener(new OnBackButtonClickListener());
     }
 
-    void sendAppData() {
+    void exportData() {
         String dateStr = "";
         List<MoodVote> votes = MoodVotesDatabase.getInstance(getContext()).moodVoteDao().getAll();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy, HH:mm");
@@ -225,29 +225,29 @@ public class OptionsFragment extends Fragment {
             dateStr += dateFormat.format(vote.getDate()) + ", " + vote.getMood().score() + "\n";
         }
         Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:?subject=" + "הודעה מ-Appy" + "&body=" + dateStr));
+        intent.setData(Uri.parse("mailto:?subject=" + getResources().getString(R.string.export_data_email_subject) + "&body=" + dateStr));
         startActivity(intent);
     }
 
-    void deleteAppData(){
+    void resetData(){
         MoodVotesDatabase appDatabase = MoodVotesDatabase.getInstance(getContext());
         appDatabase.moodVoteDao().deleteAll();
         _prefData.setPrevReminderDate(null);
-        _fragmentListener.onAppDataDeleted();
+        _fragmentListener.onAppDataReset();
     }
 
-    void showDialogConfirmAppDataDeletion() {
+    void showDialogConfirmDataReset() {
         AlertDialog.Builder dlgAlertBuilder = new AlertDialog.Builder(getContext());
-        dlgAlertBuilder.setMessage("אתה בטוח שאתה רוצה לאפס את המידע שבאפליקציה?");
+        dlgAlertBuilder.setMessage(getResources().getString(R.string.confirm_data_reset));
         dlgAlertBuilder.setPositiveButton("כן", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                deleteAppData();
+                resetData();
                 if(_chkEnableNotifications.isChecked()){
                     Date nowDate = new Date();
                     _reminderManager.setReminder(nowDate);
                 }
-                Toast.makeText(getContext(), "המידע אופס", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), getResources().getString(R.string.data_was_reset), Toast.LENGTH_SHORT).show();
             }
         });
         dlgAlertBuilder.setNegativeButton("לא", new DialogInterface.OnClickListener() {
@@ -259,10 +259,10 @@ public class OptionsFragment extends Fragment {
         dlgAlert.show();
     }
 
-    void showDialogNoAppData() {
+    void showDialogNoData() {
         AlertDialog.Builder dlgAlertBuilder = new AlertDialog.Builder(getContext());
-        dlgAlertBuilder.setMessage("האפליקציה אינה מכילה מידע");
-        dlgAlertBuilder.setPositiveButton("סגור", new DialogInterface.OnClickListener() {
+        dlgAlertBuilder.setMessage(getResources().getString(R.string.no_data));
+        dlgAlertBuilder.setPositiveButton(getResources().getString(R.string.close), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {}
         });

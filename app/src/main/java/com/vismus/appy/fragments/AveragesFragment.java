@@ -36,6 +36,7 @@ public class AveragesFragment extends Fragment {
         _averagesListAdapter = new AverageListAdapter(getContext());
         _averagesListAdapter.setItems(createAveragesList());
         _lsvAverages.setAdapter(_averagesListAdapter);
+        AveragePeriod.setContext(getContext());
         return rootView;
     }
 
