@@ -64,8 +64,8 @@ public class PointingTextView extends LinearLayout{
     }
 
     public void setViewColor(ViewColor viewColor) {
-        _txvText.setBackgroundResource(viewColor == ViewColor.BLUE ? R.color.blue : R.color.gray);
-        _layMargin.setBackgroundResource(viewColor == ViewColor.BLUE ? R.color.blue : R.color.gray);
+        _txvText.setBackgroundResource(viewColor == ViewColor.BLUE ? R.color.dark_blue : R.color.dark_gray);
+        _layMargin.setBackgroundResource(viewColor == ViewColor.BLUE ? R.color.dark_blue : R.color.dark_gray);
         _imvTriangle.setBackgroundResource(viewColor == ViewColor.BLUE ? R.drawable.right_pointing_triangle_blue : R.drawable.right_pointing_triangle_gray);
     }
 

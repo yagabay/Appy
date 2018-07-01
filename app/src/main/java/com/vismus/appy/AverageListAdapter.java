@@ -49,7 +49,7 @@ public class AverageListAdapter extends BaseAdapter {
         AverageInfo averageInfo = _itemPosToAverageInfo.get(position).second;
         View itemView = new AveragesListItem(_context, averagePeriod, averageInfo);
         FrameLayout layAverageInfo = itemView.findViewById(R.id.lay_average_info);
-        layAverageInfo.setOnClickListener(new OnAveragesListItemClicked());
+        layAverageInfo.setOnClickListener(new OnAveragesListItemClickListener());
         layAverageInfo.setTag(position);
         _itemPosToLayout.put(position, layAverageInfo);
         return itemView;
@@ -75,7 +75,7 @@ public class AverageListAdapter extends BaseAdapter {
 
     /* LISTENERS */
 
-    class OnAveragesListItemClicked implements View.OnClickListener {
+    class OnAveragesListItemClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
             FrameLayout layItem = (FrameLayout) view;

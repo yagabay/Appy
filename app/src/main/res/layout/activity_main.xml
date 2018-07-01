@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- view pager or splash screen -->
+    <!-- hosts splash, welcome page or main pager -->
 
     <FrameLayout
         android:id="@+id/lay_main_activity"

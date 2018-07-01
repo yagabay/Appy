@@ -24,7 +24,7 @@
     <string name="reminders_time_p1">התזכורת תופיע בכל יום</string>
     <string name="reminders_time_p2">בשעה אקראית בין 10:00 ל-20:00.</string>
     <string name="reminders_time_edit_p1">ניתן לשנות את טווח השעות</string>
-    <string name="reminders_time_edit_p2">בתפריט \'אפשרויות\' באפליקציה</string>
+    <string name="reminders_time_edit_p2">בתפריט \ באפליקציה</string>
     
     <string name="enable_reminders">אפשר תזכורות</string>
     <string name="not_now">לא כרגע</string>

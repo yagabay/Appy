@@ -11,7 +11,6 @@
 
     <path
         android:fillColor="#99D9EA"
-        android:strokeWidth="1"
         android:pathData="
             M10,29
             l79,-19
@@ -20,7 +19,6 @@
 
     <path
         android:fillColor="#FFC90E"
-        android:strokeWidth="1"
         android:pathData="
             M125,49
             l80,-25
@@ -29,7 +27,6 @@
 
     <path
         android:fillColor="#FBEE00"
-        android:strokeWidth="1"
         android:pathData="
             M10,29
             l115,20
@@ -38,7 +35,6 @@
 
     <path
         android:fillColor="#FF6295"
-        android:strokeWidth="1"
         android:pathData="
             M15,56
             l110,22
@@ -47,7 +43,6 @@
 
     <path
         android:fillColor="#FF7F27"
-        android:strokeWidth="1"
         android:pathData="
             M125,77
             l76,-27

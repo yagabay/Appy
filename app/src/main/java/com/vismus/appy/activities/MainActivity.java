@@ -1,5 +1,3 @@
-// DONE
-
 package com.vismus.appy.activities;
 
 import android.support.v7.app.AppCompatActivity;
@@ -63,6 +61,11 @@ public class MainActivity extends AppCompatActivity implements SplashFragmentLis
     @Override
     public void onAppDataReset() {
         _mainPagerFragment.refreshAveragesFragment();
+    }
+
+    @Override
+    public void onSettingsFragmentClosed(){
+        getSupportFragmentManager().popBackStack();
     }
 
     /* HELPERS */

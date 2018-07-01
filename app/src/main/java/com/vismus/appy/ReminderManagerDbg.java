@@ -30,7 +30,7 @@ public class ReminderManagerDbg extends ReminderManager{
         Toast.makeText(_context, "NOW:   " + _dateFormat.format(nowDate), Toast.LENGTH_LONG).show();
         Date reminderDate = _prefData.getNextReminderDate();
         contentText = _dateFormat.format(nowDate) + " (" + _dateFormat.format(reminderDate) + ")";
-        super.publishReminder(nowDate, null, contentText);
+        super.publishReminder(nowDate, "Appy", contentText);
         Toast.makeText(_context, "PUBLISHED:   " + _dateFormat.format(reminderDate), Toast.LENGTH_LONG).show();
         _reminderPublished = true;
     }

@@ -76,7 +76,7 @@ public class OptionsFragment extends Fragment {
 
     /* LISTENERS */
 
-    class OnEnableNotificationsCheckBoxChangedListener implements CompoundButton.OnCheckedChangeListener {
+    class OnEnableNotificationsCheckBoxCheckedChangeListener implements CompoundButton.OnCheckedChangeListener {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
@@ -94,7 +94,7 @@ public class OptionsFragment extends Fragment {
         }
     }
 
-    class OnEnableNotificationSoundCheckBoxChangedListener implements CompoundButton.OnCheckedChangeListener {
+    class OnEnableNotificationSoundCheckBoxCheckedChangListener implements CompoundButton.OnCheckedChangeListener {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
@@ -171,7 +171,7 @@ public class OptionsFragment extends Fragment {
     class OnBackButtonClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            getActivity().getSupportFragmentManager().popBackStack();
+            _fragmentListener.onSettingsFragmentClosed();
         }
     }
 
@@ -208,8 +208,8 @@ public class OptionsFragment extends Fragment {
     }
 
     void setListeners(){
-        _chkEnableNotifications.setOnCheckedChangeListener(new OnEnableNotificationsCheckBoxChangedListener());
-        _chkEnableNotificationsSound.setOnCheckedChangeListener(new OnEnableNotificationSoundCheckBoxChangedListener());
+        _chkEnableNotifications.setOnCheckedChangeListener(new OnEnableNotificationsCheckBoxCheckedChangeListener());
+        _chkEnableNotificationsSound.setOnCheckedChangeListener(new OnEnableNotificationSoundCheckBoxCheckedChangListener());
         _spnMinNotificationHour.setOnItemSelectedListener(new OnMinNotificationHourSpinnerItemSelectedListener());
         _spnMaxNotificationHour.setOnItemSelectedListener(new OnMaxNotificationHourSpinnerItemSelectedListener());
         _btnExportData.setOnClickListener(new OnExportDataButtonClickListener());

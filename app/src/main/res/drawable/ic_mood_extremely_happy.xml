@@ -9,7 +9,7 @@
 
     <!-- circle -->
     <path
-        android:fillColor="#FF6295"
+        android:fillColor="#FF4081"
         android:strokeColor="#666666"
         android:strokeWidth="1.5"
         android:pathData="

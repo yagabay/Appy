@@ -3,15 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="blue">#456789</color>
-    <color name="gray">#BBBBBB</color>
     <color name="white">#FFFFFF</color>
-    <color name="mood_extremely_happy">#FF6295</color>
-    <color name="mood_fairly_happy">#FF7F27</color>
-    <color name="mood_slightly_happy">#FFC90E</color>
-    <color name="mood_neutral">#FBEE00</color>
-    <color name="mood_slightly_sad">#B5E61D</color>
-    <color name="mood_fairly_sad">#C8BFE7</color>
-    <color name="mood_extremely_sad">#99D9EA</color>
-    <color name="mood_stroke">#666666</color>
+    <color name="dark_blue">#456789</color>
+    <color name="light_gray">#C8BFE7</color>
+    <color name="dark_gray">#BBBBBB</color>
 </resources>
