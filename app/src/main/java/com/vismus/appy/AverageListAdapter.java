@@ -272,4 +272,3 @@ public class AverageListAdapter extends BaseAdapter {
     }
 
 }
-1
