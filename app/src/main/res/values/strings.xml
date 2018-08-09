@@ -11,7 +11,7 @@
     <string name="period_last_6_months">6 החודשים האחרונים</string>
     <string name="period_last_year">השנה האחרונה</string>
     <string name="period_all">הכל</string>
-    
+
     <!-- splash fragment -->
 
     <string name="app_by">by Vismus</string>
@@ -25,13 +25,13 @@
     <string name="reminders_time_p2">בשעה אקראית בין 10:00 ל-20:00.</string>
     <string name="reminders_time_edit_p1">ניתן לשנות את טווח השעות</string>
     <string name="reminders_time_edit_p2">בתפריט \ באפליקציה</string>
-    
+
     <string name="enable_reminders">אפשר תזכורות</string>
     <string name="not_now">לא כרגע</string>
 
     <!-- vote fragment -->
 
-    <string name="vote_question">איך אתה מרגיש, תומר?</string>
+    <string name="vote_question">איך אתה מרגיש?</string>
     <string name="confirm_vote_reselect">כבר הצבעת היום. האם תרצה לשנות את הבחירה שלך?</string>
 
     <!-- options fragment -->
@@ -95,5 +95,13 @@
     <string name="no_vote_ever">לא הצבעת מעולם</string>
     <string name="no_vote_in_period_v1">לא הצבעת ב-%1$s</string>
     <string name="no_vote_in_period_v2">לא הצבעת ב%1$s</string>
+
+    <string name="the_category">הקטגוריה</string>
+    <string name="will_be_available">תהיה זמינה</string>
+    <string name="tomorrow">מחר</string>
+    <string name="in">בעוד</string>
+    <string name="two_days">יומיים</string>
+    <string name="days">ימים</string>
+    <string name="is_not_available">אינה זמינה</string>
 
 </resources>

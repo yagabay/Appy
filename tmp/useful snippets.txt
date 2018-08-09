@@ -1,0 +1,53 @@
+*** MainPagerFragment? ***
+
+@Override
+// called whenever fragment gains/loses user visibility
+public void setUserVisibleHint(boolean isVisibleToUser) {
+	super.setUserVisibleHint(isVisibleToUser);
+	if (isVisibleToUser) {
+		// TODO
+	}
+}
+
+@Override
+// called either: (1) on fragment creation (2) whenever app refocused
+public void onResume(){
+	super.onResume();
+	if(getUserVisibleHint()){ // app refocused with this fragment visible
+		// TODO
+	}
+}
+
+void showDialogInvalidDeviceTimeError() {
+	if(_invalidDeviceTimeErrorDialogShown) {
+		return;
+	}
+	AlertDialog.Builder dlgAlertBuilder = new AlertDialog.Builder(getContext());
+	dlgAlertBuilder.setMessage("התאריך המוגדר במכשיר אינו תואם את המידע שבאפליקציה. עדכן את התאריך בתפריט 'הגדרות' של המכשיר, או אפס את המידע בתפריט 'אפשרויות' באפליקציה");
+	AlertDialog dlgAlert = dlgAlertBuilder.create();
+	dlgAlert.setButton(AlertDialog.BUTTON_POSITIVE, "סגור", new DialogInterface.OnClickListener() {
+		@Override
+		public void onClick(DialogInterface dialogInterface, int i) {
+			_invalidDeviceTimeErrorDialogShown = false;
+		}
+	});
+	dlgAlert.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	dlgAlert.show();
+	_invalidDeviceTimeErrorDialogShown = true;
+}
+
+*** ModeVoteFragment ***
+
+LinearLayout layMoodVote = rootView.findViewById(R.id.lay_mood_vote);
+layMoodVote.setOnTouchListener(new OnFragmentTouchListener());
+	
+private class OnFragmentTouchListener implements View.OnTouchListener {
+
+	@Override
+	public boolean onTouch(View view, MotionEvent motionEvent) {
+		if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+			// TODO
+		}
+		return true;
+	}
+}

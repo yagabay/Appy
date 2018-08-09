@@ -1,6 +1,7 @@
 package com.vismus.appy;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.Pair;
@@ -195,22 +196,23 @@ public class AverageListAdapter extends BaseAdapter {
     }
 
     void showMessageAveragePeriodUnavailable(int numDaysUntilAvailable, int numDaysSinceFirstVote) {
-        String message = "הקטגוריה ";
+        Resources resources = _context.getResources();
+        String message = resources.getString(R.string.the_category) + " ";
         if(numDaysSinceFirstVote != -1) {
-            message += "תהיה זמינה ";
+            message += resources.getString(R.string.will_be_available) + " ";
             if (numDaysUntilAvailable == 1) {
-                message += "מחר";
+                message += resources.getString(R.string.tomorrow);
             } else {
-                message += "בעוד ";
+                message += resources.getString(R.string.in) + " ";
                 if (numDaysUntilAvailable == 2) {
-                    message += "יומיים";
+                    message += resources.getString(R.string.two_days);
                 } else {
-                    message += numDaysUntilAvailable + " ימים";
+                    message += numDaysUntilAvailable + " " + resources.getString(R.string.days);
                 }
             }
         }
         else {
-            message += "אינה זמינה";
+            message += _context.getResources().getString(R.string.is_not_available);
         }
         Toast.makeText(_context, message, Toast.LENGTH_SHORT).show();
     }
@@ -270,3 +272,4 @@ public class AverageListAdapter extends BaseAdapter {
     }
 
 }
+1

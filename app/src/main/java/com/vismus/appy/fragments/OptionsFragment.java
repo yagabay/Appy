@@ -239,7 +239,7 @@ public class OptionsFragment extends Fragment {
     void showDialogConfirmDataReset() {
         AlertDialog.Builder dlgAlertBuilder = new AlertDialog.Builder(getContext());
         dlgAlertBuilder.setMessage(getResources().getString(R.string.confirm_data_reset));
-        dlgAlertBuilder.setPositiveButton("כן", new DialogInterface.OnClickListener() {
+        dlgAlertBuilder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 resetData();
@@ -250,7 +250,7 @@ public class OptionsFragment extends Fragment {
                 Toast.makeText(getContext(), getResources().getString(R.string.data_was_reset), Toast.LENGTH_SHORT).show();
             }
         });
-        dlgAlertBuilder.setNegativeButton("לא", new DialogInterface.OnClickListener() {
+        dlgAlertBuilder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {}
         });
