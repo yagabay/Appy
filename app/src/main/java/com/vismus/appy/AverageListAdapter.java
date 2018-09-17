@@ -93,18 +93,19 @@ public class AverageListAdapter extends BaseAdapter {
     /* EVENT HANDLERS */
 
     void onAvailablePeriodItemClicked(int position) {
-        AverageInfo averageInfo = _itemPosToAverageInfo.get(position).second;
-        if (averageInfo != null) {
+        AverageInfo clickedItemAverageInfo = _itemPosToAverageInfo.get(position).second;
+        if (clickedItemAverageInfo != null) {
             for (int i : _itemPosToLayout.keySet()) {
-                if (_itemPosToAverageInfo.get(i).second != null) {
+                AverageInfo averageInfo = _itemPosToAverageInfo.get(i).second;
+                if (averageInfo != null) {
                     FrameLayout layItem = _itemPosToLayout.get(i);
                     LinearLayout layAverageInfo = (LinearLayout) layItem.getChildAt(0);
                     if (i == position) {
                         if (layAverageInfo.getTag() == AverageInfoDisplay.AVERAGE_DISPLAY_ICON) { // replace icon with text
-                            setAverageText(layItem, averageInfo);
+                            setAverageText(layItem, clickedItemAverageInfo);
                         }
                         else {
-                            setAverageIcon(layItem, averageInfo); // replace text with icon
+                            setAverageIcon(layItem, clickedItemAverageInfo); // replace text with icon
                         }
                     }
                     else if (layAverageInfo.getTag() == AverageInfoDisplay.AVERAGE_DISPLAY_TEXT) { // set others with icon
