@@ -14,6 +14,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import static java.lang.Character.toUpperCase;
+
 public class Utils {
 
     static final TimeUtils _timeUtils = TimeUtils.getInstance();
@@ -120,6 +122,10 @@ public class Utils {
 
     public static long randomize(long min, long max) {
         return new Random().nextInt((int) (max - min)) + min;
+    }
+
+    public static String firstCharToUpperCase(String str){
+        return toUpperCase(str.charAt(0)) + str.substring(1);
     }
 
 }

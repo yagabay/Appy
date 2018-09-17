@@ -3,14 +3,14 @@
 
     <!-- periods titles -->
 
-    <string name="period_today">היום</string>
-    <string name="period_last_3_days">3 הימים האחרונים</string>
-    <string name="period_last_week">השבוע האחרון</string>
-    <string name="period_last_month">החודש האחרון</string>
-    <string name="period_last_3_months">3 החודשים האחרונים</string>
-    <string name="period_last_6_months">6 החודשים האחרונים</string>
-    <string name="period_last_year">השנה האחרונה</string>
-    <string name="period_all">הכל</string>
+    <string name="period_today">today</string>
+    <string name="period_last_3_days">last 3 days</string>
+    <string name="period_last_week">last week</string>
+    <string name="period_last_month">last month</string>
+    <string name="period_last_3_months">last 3 months</string>
+    <string name="period_last_6_months">last 6 months</string>
+    <string name="period_last_year">last year</string>
+    <string name="period_all">all</string>
 
     <!-- splash fragment -->
 
@@ -18,48 +18,48 @@
 
     <!-- welcome page fragment -->
 
-    <string name="welcome_to_appy">ברוך הבא ל-Appy!</string>
-    <string name="reminders_recommend_p1">כדי שלא תשכח להצביע -</string>
-    <string name="reminders_recommend_p2">כדאי לאפשר תזכורת יומית</string>
-    <string name="reminders_time_p1">התזכורת תופיע בכל יום</string>
-    <string name="reminders_time_p2">בשעה אקראית בין 10:00 ל-20:00.</string>
-    <string name="reminders_time_edit_p1">ניתן לשנות את טווח השעות</string>
-    <string name="reminders_time_edit_p2">בתפריט \ באפליקציה</string>
+    <string name="welcome_to_appy">Welcome To Appy!</string>
+    <string name="reminders_recommend_p1">We recommend to enable a daily reminder -</string>
+    <string name="reminders_recommend_p2">so you won\'t forget to rate your mood</string>
+    <string name="reminders_time_p1">Reminder will appear every day</string>
+    <string name="reminders_time_p2">at a random time between 10:00 and 20:00</string>
+    <string name="reminders_time_edit_p1">The hours can be changed</string>
+    <string name="reminders_time_edit_p2">in the \'Options\' menu in the app</string>
 
-    <string name="enable_reminders">אפשר תזכורות</string>
-    <string name="not_now">לא כרגע</string>
+    <string name="enable_reminders">Enable reminders</string>
+    <string name="not_now">Not now</string>
 
     <!-- vote fragment -->
 
-    <string name="vote_question">איך אתה מרגיש?</string>
-    <string name="confirm_vote_reselect">כבר הצבעת היום. האם תרצה לשנות את הבחירה שלך?</string>
+    <string name="vote_question">How are you feeling?</string>
+    <string name="confirm_vote_reselect">You\'ve already rated your mood today. Do you want to change your selection?</string>
 
     <!-- options fragment -->
 
-    <string name="options">אפשרויות</string>
+    <string name="options">Options</string>
 
-    <string name="title_reminders">תזכורות</string>
-    <string name="daily_reminder">תזכורת יומית</string>
-    <string name="random_hour_from">בשעה אקראית בין</string>
-    <string name="to">ל-</string>
-    <string name="sound_on_reminder">צליל בזמן תזכורת</string>
+    <string name="title_reminders">Reminders</string>
+    <string name="daily_reminder">Daily reminder at random time</string>
+    <string name="between">between</string>
+    <string name="and">and</string>
+    <string name="sound_on_reminder">Reminder sound</string>
 
-    <string name="title_data_export">ייצוא</string>
-    <string name="export_data_to_email">ייצא את המידע שבאפליקציה לאי-מייל</string>
-    <string name="export">ייצא</string>
-    <string name="export_data_email_subject">הודעה מ-Appy</string>
+    <string name="title_data_export">Export</string>
+    <string name="export_data_to_email">Export data to e-mail</string>
+    <string name="export">Export</string>
+    <string name="export_data_email_subject">Message from Appy</string>
 
-    <string name="title_data_reset">איפוס</string>
-    <string name="reset_data">אפס את המידע שבאפליקציה</string>
-    <string name="reset">אפס</string>
+    <string name="title_data_reset">Delete</string>
+    <string name="reset_data">Delete date from app</string>
+    <string name="reset">Delete</string>
 
-    <string name="confirm_data_reset">אתה בטוח שאתה רוצה לאפס את המידע שבאפליקציה?</string>
-    <string name="data_was_reset">המידע אופס</string>
-    <string name="no_data">האפליקציה אינה מכילה מידע</string>
+    <string name="confirm_data_reset">Are you sure you want to delete your data from app?</string>
+    <string name="data_was_reset">Data deleted</string>
+    <string name="no_data">App contains no data</string>
 
-    <string name="yes">כן</string>
-    <string name="no">לא</string>
-    <string name="close">סגור</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="close">Close</string>
 
     <string-array name="arr_day_hours">
         <item>00:00</item>
@@ -91,17 +91,16 @@
 
     <!-- averages fragment -->
 
-    <string name="no_vote_today">לא הצבעת היום</string>
-    <string name="no_vote_ever">לא הצבעת מעולם</string>
-    <string name="no_vote_in_period_v1">לא הצבעת ב-%1$s</string>
-    <string name="no_vote_in_period_v2">לא הצבעת ב%1$s</string>
+    <string name="no_vote_today">You haven\'t rated your mood today</string>
+    <string name="no_vote_ever">You haven\'t rated your mood at all</string>
+    <string name="no_vote_in_period">You haven\'t rated your mood in the %s</string>
 
-    <string name="the_category">הקטגוריה</string>
-    <string name="will_be_available">תהיה זמינה</string>
-    <string name="tomorrow">מחר</string>
-    <string name="in">בעוד</string>
-    <string name="two_days">יומיים</string>
-    <string name="days">ימים</string>
-    <string name="is_not_available">אינה זמינה</string>
+    <string name="this_category">This category</string>
+    <string name="will_be_available">will be available</string>
+    <string name="tomorrow">tomorrow</string>
+    <string name="in">in</string>
+    <string name="two_days">2 days</string>
+    <string name="days">days</string>
+    <string name="is_not_available">is unavailable</string>
 
 </resources>

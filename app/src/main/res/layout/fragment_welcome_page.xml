@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="rtl"
+    android:layoutDirection="ltr"
     android:background="@drawable/bg_blue_gradient">
 
     <LinearLayout
@@ -32,17 +32,19 @@
 
         <TextView
             android:text="@string/reminders_recommend_p1"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="20dp"/>
 
         <TextView
             android:text="@string/reminders_recommend_p2"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:textColor="#666666"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"/>
 
         <TextView

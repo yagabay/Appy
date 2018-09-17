@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import static android.view.Gravity.CENTER;
+import static java.lang.Character.toUpperCase;
 
 public class AverageListAdapter extends BaseAdapter {
 
@@ -93,18 +94,19 @@ public class AverageListAdapter extends BaseAdapter {
     /* EVENT HANDLERS */
 
     void onAvailablePeriodItemClicked(int position) {
-        AverageInfo averageInfo = _itemPosToAverageInfo.get(position).second;
-        if (averageInfo != null) {
+        AverageInfo clickedItemAverageInfo = _itemPosToAverageInfo.get(position).second;
+        if (clickedItemAverageInfo != null) {
             for (int i : _itemPosToLayout.keySet()) {
-                if (_itemPosToAverageInfo.get(i).second != null) {
+                AverageInfo averageInfo = _itemPosToAverageInfo.get(i).second;
+                if (averageInfo != null) {
                     FrameLayout layItem = _itemPosToLayout.get(i);
                     LinearLayout layAverageInfo = (LinearLayout) layItem.getChildAt(0);
                     if (i == position) {
                         if (layAverageInfo.getTag() == AverageInfoDisplay.AVERAGE_DISPLAY_ICON) { // replace icon with text
-                            setAverageText(layItem, averageInfo);
+                            setAverageText(layItem, clickedItemAverageInfo);
                         }
                         else {
-                            setAverageIcon(layItem, averageInfo); // replace text with icon
+                            setAverageIcon(layItem, clickedItemAverageInfo); // replace text with icon
                         }
                     }
                     else if (layAverageInfo.getTag() == AverageInfoDisplay.AVERAGE_DISPLAY_TEXT) { // set others with icon
@@ -175,29 +177,21 @@ public class AverageListAdapter extends BaseAdapter {
 
     void showMessageAverageInfoUnavailable(AveragePeriod averagePeriod) {
         String message;
+        Resources resources = _context.getResources();
         if (averagePeriod == AveragePeriod.TODAY) {
-            message = _context.getResources().getString(R.string.no_vote_today);
+            message = resources.getString(R.string.no_vote_today);
         } else if (averagePeriod == AveragePeriod.ALL) {
-            message = _context.getResources().getString(R.string.no_vote_ever);
+            message = resources.getString(R.string.no_vote_ever);
         } else {
-            String periodTitle = averagePeriod.title();
-            String messageFmt;
-            if (Character.isDigit(periodTitle.charAt(0))) {
-                messageFmt = _context.getResources().getString(R.string.no_vote_in_period_v1);
-            } else {
-                if(periodTitle.charAt(0) == 'ה'){
-                    periodTitle = periodTitle.substring(1, periodTitle.length());
-                }
-                messageFmt = _context.getResources().getString(R.string.no_vote_in_period_v2);
-            }
-            message = String.format(messageFmt, periodTitle);
+            String messageFmt = resources.getString(R.string.no_vote_in_period);
+            message = String.format(messageFmt, averagePeriod.title());
         }
         Toast.makeText(_context, message, Toast.LENGTH_SHORT).show();
     }
 
     void showMessageAveragePeriodUnavailable(int numDaysUntilAvailable, int numDaysSinceFirstVote) {
         Resources resources = _context.getResources();
-        String message = resources.getString(R.string.the_category) + " ";
+        String message = resources.getString(R.string.this_category) + " ";
         if(numDaysSinceFirstVote != -1) {
             message += resources.getString(R.string.will_be_available) + " ";
             if (numDaysUntilAvailable == 1) {
@@ -242,7 +236,7 @@ public class AverageListAdapter extends BaseAdapter {
         }
 
         void initViews(AveragePeriod averagePeriod, AverageInfo averageInfo) {
-            _ptvAveragePeriod.setText(averagePeriod.title());
+            _ptvAveragePeriod.setText(Utils.firstCharToUpperCase(averagePeriod.title()));
             if(isAveragePeriodAvailable(averagePeriod)){
                 _ptvAveragePeriod.setViewColor(PointingTextView.ViewColor.BLUE);
                 if(averageInfo != null) {
